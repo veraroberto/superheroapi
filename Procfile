@@ -1,1 +1,1 @@
-web: gunicorn superheroapi.app:app
+web: gunicorn app:app
