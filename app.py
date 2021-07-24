@@ -27,18 +27,21 @@ def home():
 
     return render_template("/index.html")
 
+
 @app.route("/index.html")
 def index():
 
     return render_template("/index.html")
 
+
 @app.route("/radar.html")
 def radar():
-  return render_template("radar.html")
+    return render_template("radar.html")
+
 
 @app.route("/Comparatioindex.html")
 def comparison():
-  return render_template("Comparatioindex.html")
+    return render_template("Comparatioindex.html")
 
 
 @app.route("/api")
@@ -48,27 +51,25 @@ def api():
     # Replace myFirstDatabase with the name of the database that connections will use by default.
     # Ensure any option params are URL encoded.
 
-    # client = pymongo.MongoClient("mongodb+srv://robertovera_db:<password>@cluster0.g7ylf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    # "mongodb+srv://robertovera_db:<password>@cluster0.g7ylf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
-  password = "Ffu09ucvMbUB147Y"
-  myFirstDatabase = "SuperHeroes"
-  client_url = "mongodb+srv://robertovera_db:" + password + "@cluster0.g7ylf.mongodb.net/" + myFirstDatabase + "?retryWrites=true&w=majority"
-  
-  myclient = pymongo.MongoClient(client_url)
+    password = "Ffu09ucvMbUB147Y"
+    myFirstDatabase = "SuperHeroes"
+    client_url = "mongodb+srv://robertovera_db:" + password + \
+        "@cluster0.g7ylf.mongodb.net/" + myFirstDatabase + "?retryWrites=true&w=majority"
 
-  mydb = myclient.SuperHeroes
+    myclient = pymongo.MongoClient(client_url)
 
-  mydoc = mydb["SuperHeroesJson"].find({})
+    mydb = myclient.SuperHeroes
 
+    mydoc = mydb["SuperHeroesJson"].find({})
 
+    jsonHero = []
+    for x in mydoc:
+        del x['_id']
+        jsonHero.append(x)
 
-  jsonHero = []
-  for x in mydoc:
-    del x['_id']
-    jsonHero.append(x)
-  
-  
-  return jsonify(jsonHero)
+    return jsonify(jsonHero)
 
 
 if __name__ == "__main__":
