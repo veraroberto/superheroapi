@@ -2,6 +2,8 @@
 var SubjectID = d3.select("#selDataset");
 var SuperHeroInfo = d3.select("#sample-metadata");
 var SuperHeroImage = d3.select("#hero-image")
+// var HeroCard = d3.select("#card-img")
+
 
 var importJSON = d3.json("/api");
 
@@ -45,7 +47,14 @@ function createGraphs(noID) {
 
 
 function createSuperHeroInfo(name, id, biography) {
+  var svgWidth = 100;
+  var svgHeight = 50;
+
+
   SuperHeroInfo.html("");
+  SuperHeroInfo.append("svg")
+    .attr("width", svgWidth)
+    .attr("height", svgHeight);
   SuperHeroInfo.append("li")
     .text(`name: ${name}`);
 
@@ -66,19 +75,37 @@ function createHeroImage(url) {
     .append("img")
     .attr("height", "600")
     .attr("width", "400")
-    .classed("center", true)
+    .classed("center", true);
 
   try {
-   
+
     svg.attr("src", url);
     // console.log("Error")
   }
   catch {
     console.error("error");
     errorURL = "https://zui.zywave.com/images/communications/messages/401-error-message.svg";
-    console.log(errorURL)
+    console.log(errorURL);
     // svg.attr("src", errorURL);
   }
+  // var HeroCard = d3.select("#card-img")
+  // HeroCard.html("")
+  // .append("img")
+  // .attr("height", "600")
+  // .attr("width", "400")
+  // .classed("center", true)
+  // .attr("src", url)
+  // .append("div").classed("card-body", true)
+  // .append("h5").classed("card-title",true).text("Some Text")
+  // .append("p").classed("card-text", true).text("Other Text")
+
+
+  // <div class="card-body">
+  //             <h5 class="card-title">Card title</h5>
+  //             <p class="card-text">So
+
+
+
 
 }
 
