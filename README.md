@@ -1,5 +1,5 @@
-# superheroapi
-[Project Proporsal](https://docs.google.com/document/d/12d_BRRAx6_muMJXZa3u_zGuRWuWb35m4ZuO6oeIwbgs/edit?ts=60e9de65)
+## superheroapi
+### [Project Proporsal](https://docs.google.com/document/d/12d_BRRAx6_muMJXZa3u_zGuRWuWb35m4ZuO6oeIwbgs/edit?ts=60e9de65)
 ![image](https://user-images.githubusercontent.com/79944080/126874385-08a98c45-0b55-4368-abc6-2ed59e3ed533.png)
 
 ![image](https://user-images.githubusercontent.com/79944080/126874451-ff5f2358-b3a9-4790-a3c6-279a4aaf08eb.png)
