@@ -71,7 +71,7 @@ function createHeroImage(url) {
   try {
    
     svg.attr("src", url);
-    console.log("Error")
+    // console.log("Error")
   }
   catch {
     // console.error(error);

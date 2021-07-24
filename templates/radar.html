@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Radar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-family: 'Bangers', cursive;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Superheroes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="radar.html">Radar plot</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Comparatioindex.html">Scatter Plot</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://husseinhuesca.github.io/superheoresdb.github.io/index.html">Map</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="jumbo">
+      <h1><strong>COMPARE YOUR HEROES!</strong></h1>
+    </div>
+    <div id="instructions">
+      <p>Have you ever wondered who would win between Batman and Superman? Or even better, Goku and Darth Vader? Well now you can!</p>
+      <p>Well... sort of. You can compare their intelligence, strength, speed, durability, power, combat</p>
+      <p>Who is faster, who is stronger, who is smarter? Now you can know! Select your fav hero or villain and compare!!</p>
+      <p>Check the ID on the HOME page :) </p>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Hero ID:</h5>
+          <select id="selDataset" onchange="radarPlot(this.value)"></select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="well2">
+          <h5>Hero 2 ID:</h5>
+          <select id="selDataset2" onchange="radarPlot(this.value)"></select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <canvas id="radar" width="100" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <p>Super Heroes</p>
+  </div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js' integrity='sha512-lUsN5TEogpe12qeV8NF4cxlJJatTZ12jnx9WXkFXOy7yFbuHwYRTjmctvwbRIuZPhv+lpvy7Cm9o8T9e+9pTrg==' crossorigin='anonymous'></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/static/js/radar.js"></script>
+
+  
+</body>
+</html>

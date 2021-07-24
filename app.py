@@ -25,7 +25,20 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    return render_template("index.html")
+    return render_template("/index.html")
+
+@app.route("/index.html")
+def index():
+
+    return render_template("/index.html")
+
+@app.route("/radar.html")
+def radar():
+  return render_template("radar.html")
+
+@app.route("/Comparatioindex.html")
+def comparison():
+  return render_template("Comparatioindex.html")
 
 
 @app.route("/api")
