@@ -131,13 +131,13 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     .html(function (d) {
       if (chosenXAxis === "strength") {
 
-        return (`${d.id}<hr>${xlabel} ${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.name}<hr>${xlabel} ${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       } else if (chosenXAxis !== "intelligence" && chosenXAxis !== "strength") {
 
-        return (`${d.id}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.name}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       } else {
 
-        return (`${d.id}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.name}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       }
     });
 
@@ -163,6 +163,8 @@ d3.json("/api").then(function (jsonHeroData) {
   jsonHeroData.forEach(function (data) {
 
     var dict = {
+      "id": data.id,
+      "name": data.name,
       "intelligence": parseInt(data.powerstats.intelligence),
       "durability": parseInt(data.powerstats.durability),
       "strength": parseInt(data.powerstats.strength),
@@ -173,17 +175,6 @@ d3.json("/api").then(function (jsonHeroData) {
     HeroData.push(dict)
 
   });
-  // var HeroData = [{
-  //   "intelligence":pIntellignce,
-  //   "durability" : pDurability,
-  //   "strength" : pStrength,
-  //   "speed": pSpeed,
-  //   "combat": pCombat,
-  //   "power": pPower
-
-  // }];
-  console.log(typeof HeroData)
-
 
   var xLinearScale = xScale(HeroData, chosenXAxis);
   var yLinearScale = yScale(HeroData, chosenYAxis);
