@@ -131,13 +131,13 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     .html(function (d) {
       if (chosenXAxis === "strength") {
 
-        return (`${d.name}<hr>${xlabel} ${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.id}<hr>${xlabel} ${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       } else if (chosenXAxis !== "intelligence" && chosenXAxis !== "strength") {
 
-        return (`${d.name}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.id}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       } else {
 
-        return (`${d.name}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
+        return (`${d.id}<hr>${xlabel}${d[chosenXAxis]}<br>${ylabel}${d[chosenYAxis]}`);
       }
     });
 
