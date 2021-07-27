@@ -77,7 +77,7 @@ function createHeroImage(url) {
     .classed("center", true);
 
   try {
-    callback(url);
+    // callback(url);
     svg.attr("src", url);
   }
 
