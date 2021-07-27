@@ -1,4 +1,3 @@
-
 var SubjectID = d3.select("#selDataset");
 var SuperHeroInfo = d3.select("#sample-metadata");
 var SuperHeroImage = d3.select("#hero-image")
@@ -78,34 +77,14 @@ function createHeroImage(url) {
     .classed("center", true);
 
   try {
-
+    callback(url);
     svg.attr("src", url);
-    // console.log("Error")
   }
-  catch (e) {
-    console.error(e.name);
+
+  catch {
     errorURL = "https://zui.zywave.com/images/communications/messages/401-error-message.svg";
-    console.log(errorURL);
-    // svg.attr("src", errorURL);
+    svg.attr("src", errorURL);
   }
-  // var HeroCard = d3.select("#card-img")
-  // HeroCard.html("")
-  // .append("img")
-  // .attr("height", "600")
-  // .attr("width", "400")
-  // .classed("center", true)
-  // .attr("src", url)
-  // .append("div").classed("card-body", true)
-  // .append("h5").classed("card-title",true).text("Some Text")
-  // .append("p").classed("card-text", true).text("Other Text")
-
-
-  // <div class="card-body">
-  //             <h5 class="card-title">Card title</h5>
-  //             <p class="card-text">So
-
-
-
 
 }
 
