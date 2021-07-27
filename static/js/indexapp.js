@@ -82,8 +82,8 @@ function createHeroImage(url) {
     svg.attr("src", url);
     // console.log("Error")
   }
-  catch {
-    console.error("error");
+  catch (e) {
+    console.error(e.name);
     errorURL = "https://zui.zywave.com/images/communications/messages/401-error-message.svg";
     console.log(errorURL);
     // svg.attr("src", errorURL);
