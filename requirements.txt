@@ -1,6 +1,6 @@
 certifi==2021.5.30
 click==8.0.1
-dataclasses==0.8
+dataclasses==0.6
 dnspython==1.16.0
 Flask==2.0.1
 gunicorn==20.1.0
